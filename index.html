@@ -5,144 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reniel Demafelis | Portfolio</title>
   
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
-    body {
-      background-color: #fffbea;
-      font-family: 'Nunito', sans-serif;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-    }
+    /* Portfolio Styles */
+    body { background-color: #fffbea; font-family: 'Nunito', sans-serif; margin: 0; padding: 0; text-align: center; }
+    header { background-color: #ffeb99; padding: 20px; border-bottom: 4px solid #f4c542; }
+    header h1 { margin: 0; font-size: 2.5em; color: #333; }
+    header h3 { margin: 10px 0 0; color: #555; }
+    .section-box { background-color: white; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); width: 85%; margin: 30px auto; padding: 20px; }
+    figure { display: inline-block; text-align: center; margin: 15px; }
+    figure img { border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+    iframe { border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+    a { color: #f4b400; text-decoration: none; font-weight: bold; }
+    .contact { background-color: #fff7d1; padding: 20px; border-radius: 12px; width: 85%; margin: 30px auto; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    .comment-box { width: 85%; max-width: 600px; margin: 30px auto; background: #fff; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); padding: 15px; }
+    .comments { border: 1px solid #ccc; border-radius: 8px; padding: 10px; height: 200px; overflow-y: auto; background: #fafafa; text-align: left; }
+    .input-area { display: flex; margin-top: 8px; }
+    .input-area input { flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 8px; }
+    .send-btn { background: #f4b400; border: none; color: #fff; padding: 0 12px; margin-left: 5px; border-radius: 8px; cursor: pointer; }
 
-    header {
-      background-color: #ffeb99;
-      padding: 20px;
-      border-bottom: 4px solid #f4c542;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-      color: #333;
-    }
-
-    header h3 {
-      margin: 10px 0 0;
-      color: #555;
-    }
-
-    .section-box {
-      background-color: white;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      width: 85%;
-      margin: 30px auto;
-      padding: 20px;
-    }
-
-    figure {
-      display: inline-block;
-      text-align: center;
-      margin: 15px;
-    }
-
-    figure img {
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-
-    figcaption {
-      margin-top: 8px;
-      font-weight: bold;
-      color: #444;
-    }
-
-    iframe {
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-
-    h2 {
-      color: #333;
-      font-weight: 700;
-    }
-
-    a {
-      color: #f4b400;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .contact {
-      background-color: #fff7d1;
-      padding: 20px;
-      border-radius: 12px;
-      width: 85%;
-      margin: 30px auto;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    .comment-box {
-      width: 85%;
-      max-width: 600px;
-      margin: 30px auto;
-      font-family: 'Nunito', sans-serif;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      padding: 15px;
-    }
-
-    .comments {
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      padding: 10px;
-      height: 200px;
-      overflow-y: auto;
-      background: #fafafa;
-      text-align: left;
-    }
-
-    .input-area {
-      display: flex;
-      margin-top: 8px;
-    }
-
-    .input-area input {
-      flex: 1;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 1em;
-    }
-
-    .send-btn {
-      background: #f4b400;
-      border: none;
-      color: #fff;
-      padding: 0 12px;
-      margin-left: 5px;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    .send-btn:hover {
-      background: #e2a100;
-    }
-
-    .send-btn svg {
-      width: 23px;
-      height: 23px;
-      stroke: #fff;
-    }
+    /* --- Chatbot Styles --- */
+    #chat-btn { position: fixed; bottom: 20px; right: 20px; background: #f4b400; color: white; padding: 15px 25px; border-radius: 30px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3); font-weight: bold; z-index: 1000; }
+    #chat-window { position: fixed; bottom: 80px; right: 20px; width: 320px; height: 450px; background: white; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); display: none; flex-direction: column; overflow: hidden; z-index: 1000; }
+    #chat-header { background: #f4b400; color: white; padding: 10px; text-align: center; font-weight: bold; }
+    #chat-history { flex: 1; padding: 15px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; }
+    .message { padding: 8px 12px; border-radius: 15px; max-width: 80%; font-size: 0.9em; word-wrap: break-word; }
+    .bot { background: #eee; align-self: flex-start; color: #333; }
+    .user { background: #f4b400; color: white; align-self: flex-end; }
+    .chat-input-area { display: flex; padding: 10px; border-top: 1px solid #eee; }
+    .chat-input-area input { flex: 1; padding: 8px; border: 1px solid #ddd; border-radius: 20px; outline: none; }
+    .chat-input-area button { background: #f4b400; border: none; color: white; padding: 8px 15px; border-radius: 20px; margin-left: 5px; cursor: pointer; }
   </style>
 </head>
 
@@ -151,63 +44,28 @@
   <header>
     <h1>MY PORTFOLIO</h1>
     <h3>Hi, my name is <b>Reniel Demafelis</b></h3>
-    <p>This is where I showcase my captures, edits, and creative outputs.</p>
   </header>
-  
-      <p><b>RESUME</b> <a href=https://www.dropbox.com/scl/fi/7qwd2ci4fhkbv5bbhf4kw/Reniel-Demafelis-professional-resume-design.pdf?rlkey=ldvv4o0ayfzikjxh4du9gnyo1&st=1iqnvjir&dl=0target="_blank">CLICK ME!</a></p>
-  </div>
 
-  <!-- Gallery Section -->
+  <p><b>RESUME</b> <a href="https://www.dropbox.com/scl/fi/7qwd2ci4fhkbv5bbhf4kw/Reniel-Demafelis-professional-resume-design.pdf?rlkey=ldvv4o0ayfzikjxh4du9gnyo1&st=1iqnvjir&dl=0" target="_blank">CLICK ME!</a></p>
+
   <div class="section-box">
     <h2>My Edits and Captures</h2>
-    <figure>
-      <img src="1756460234638.jpg" width="250" height="250" alt="Couple">
-      <figcaption>Couple</figcaption>
-    </figure>
-
-    <figure>
-      <img src="Messenger_creation_2E247424-34A3-402A-BD76-ADC3AB5D0938.jpeg" width="250" height="250" alt="Photoshop">
-      <figcaption>Photoshop</figcaption>
-    </figure>
-
-    <figure>
-      <img src="Messenger_creation_688432AE-BBF3-47C7-954A-F39AD663CAA4.jpeg" width="250" height="250" alt="Product">
-      <figcaption>Product</figcaption>
-    </figure>
+    <figure><img src="1756460234638.jpg" width="250" height="250" alt="Couple"><figcaption>Couple</figcaption></figure>
+    <figure><img src="Messenger_creation_2E247424-34A3-402A-BD76-ADC3AB5D0938.jpeg" width="250" height="250" alt="Photoshop"><figcaption>Photoshop</figcaption></figure>
+    <figure><img src="Messenger_creation_688432AE-BBF3-47C7-954A-F39AD663CAA4.jpeg" width="250" height="250" alt="Product"><figcaption>Product</figcaption></figure>
+      <h2>CERTIFICATES</h2>
+    <figure><img src="IMG_20260408_171844_620.jpg" width="250" height="250" alt="Certificates"><figcaption>CISCO Networking Fundamentals</figcaption></figure>
+    <figure><img src="IMG_20260408_171332_498.jpg" width="250" height="250" alt="Certificates"><figcaption>Integrative Foundation for Innovative Systematic Solution</figcaption></figure>
   </div>
-  
-      <figure>
-      <img src="IMG_20260408_171844_620.jpg" width="250" height="250" alt="Certificates">
-      <figcaption>CISCO Networking Fundamentals</figcaption>
-    </figure>
-    
-          <figure>
-      <img src="IMG_20260408_171332_498.jpg" width="250" height="250" alt="Certificates">
-      <figcaption>Integrative Foundation for Innovative Systematic Solution</figcaption>
-    </figure>
 
-  <!-- Video Tutorials -->
   <div class="section-box">
     <h2>My Tutorial Videos</h2>
-    <figure>
-      <iframe width="250" height="250" src="https://www.youtube.com/embed/4h2Roatdo5U" title="Tutorial 1" allowfullscreen></iframe>
-      <figcaption>Tutorial 1</figcaption>
-    </figure>
-
-    <figure>
-      <iframe width="250" height="250" src="https://www.youtube.com/embed/4h2Roatdo5U" title="Tutorial 2" allowfullscreen></iframe>
-      <figcaption>Tutorial 2</figcaption>
-    </figure>
-
-    <figure>
-      <iframe width="250" height="250" src="https://www.youtube.com/embed/4h2Roatdo5U" title="Tutorial 3" allowfullscreen></iframe>
-      <figcaption>Tutorial 3</figcaption>
-    </figure>
-
+    <figure><iframe width="250" height="250" src="https://www.youtube.com/embed/4h2Roatdo5U" title="Tutorial 1" allowfullscreen></iframe><figcaption>Tutorial 1</figcaption></figure>
+    <figure><iframe width="250" height="250" src="https://www.youtube.com/embed/4h2Roatdo5U" title="Tutorial 2" allowfullscreen></iframe><figcaption>Tutorial 2</figcaption></figure>
+    <figure><iframe width="250" height="250" src="https://www.youtube.com/embed/4h2Roatdo5U" title="Tutorial 3" allowfullscreen></iframe><figcaption>Tutorial 3</figcaption></figure>
     <h4>This is a song called <i>"HANDA NA"</i></h4>
   </div>
 
-  <!-- Links -->
   <div class="section-box">
     <h2>My Online Portfolios</h2>
     <p><b>Canva Portfolio:</b> <a href="https://www.canva.com/design/DAGvejBs4UU/eVsx7KdbrTuKpzbQ0DX9wg/edit?ui=e30" target="_blank">CLICK ME!</a></p>
@@ -215,37 +73,37 @@
     <p><b>3 Helpful A.I. Tools:</b> <a href="https://www.canva.com/design/DAGyBFxHgnk/6y7_u6eVM1Fju85iAzjDHw/edit?utm_content=DAGyBFxHgnk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">CLICK ME!</a></p>
   </div>
 
-  <!-- Contact -->
   <div class="contact">
     <h3>MY CONTACT INFORMATION</h3>
-    <figure>
-      <img src="Facebook_logo_(square) (1).png" width="100" height="100" alt="Facebook">
-      <figcaption><a href="https://www.facebook.com/share/1HBwnW4Zqk/" target="_blank">Reniel Demafelis</a></figcaption>
-    </figure>
+    <figure><img src="Facebook_logo_(square) (1).png" width="100" height="100" alt="Facebook"><figcaption><a href="https://www.facebook.com/share/1HBwnW4Zqk/" target="_blank">Reniel Demafelis</a></figcaption></figure>
   </div>
 
-  <!-- Comments Section -->
   <div class="comment-box">
     <h3>Leave a Comment</h3>
     <div class="comments" id="comments"></div>
-
     <div class="input-area">
       <input type="text" id="commentInput" placeholder="Write a comment...">
       <button class="send-btn" id="sendBtn">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="white" stroke-width="2"
-             stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-          <line x1="22" y1="2" x2="11" y2="13"></line>
-          <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
       </button>
     </div>
   </div>
 
+  <div id="chat-btn" onclick="toggleChat()">Chat with me!</div>
+  <div id="chat-window">
+    <div id="chat-header">Reniel's Assistant</div>
+    <div id="chat-history"></div>
+    <div class="chat-input-area">
+      <input type="text" id="user-input" placeholder="Type a message...">
+      <button onclick="handleSend()">Send</button>
+    </div>
+  </div>
+
   <script>
+    // --- Comment Logic ---
     const comments = document.getElementById('comments');
     const input = document.getElementById('commentInput');
     const btn = document.getElementById('sendBtn');
-
     btn.onclick = () => {
       if (input.value.trim() === '') return;
       const p = document.createElement('p');
@@ -254,7 +112,57 @@
       input.value = '';
       comments.scrollTop = comments.scrollHeight;
     };
-  </script>
 
+    // --- Chatbot Logic ---
+    const chatWindow = document.getElementById('chat-window');
+    const chatHistory = document.getElementById('chat-history');
+    const userInput = document.getElementById('user-input');
+
+    const knowledgeBase = [
+      { keys: ["hi", "hello", "hey"], answer: "Hello! I am Reniel's virtual assistant. How can I help you today?" },
+      { keys: ["who", "name"], answer: "My name is Reniel Demafelis, a BSIT student who loves graphic design and tech." },
+      { keys: ["skill", "can you do"], answer: "I specialize in Photo Editing, Graphic Design, and Web Fundamentals (HTML/CSS). I also create content for Amazon A+." },
+      { keys: ["project", "work", "portfolio"], answer: "You can view my work in the 'Edits and Captures' section, or check my Figma and Canva portfolios linked on this page." },
+      { keys: ["contact", "fb", "facebook"], answer: "You can reach out to me on Facebook: Reniel Demafelis." },
+      { keys: ["education", "school"], answer: "I am currently taking BSIT (Bachelor of Science in Information Technology)." },
+      { keys: ["thanks", "thank you"], answer: "You're very welcome! Let me know if you need anything else." }
+    ];
+
+    function toggleChat() {
+      chatWindow.style.display = (chatWindow.style.display === 'flex') ? 'none' : 'flex';
+      if (chatHistory.innerHTML === '') {
+        addMessage("Hi! Ask me anything about Reniel, his skills, or his work.", 'bot');
+      }
+    }
+
+    function addMessage(text, sender) {
+      const p = document.createElement('div');
+      p.className = `message ${sender}`;
+      p.textContent = text;
+      chatHistory.appendChild(p);
+      chatHistory.scrollTop = chatHistory.scrollHeight;
+    }
+
+    function handleSend() {
+      const text = userInput.value.trim();
+      if (text === '') return;
+      
+      addMessage(text, 'user');
+      userInput.value = '';
+      
+      let response = "I'm not sure about that! Try asking about my skills, projects, or contact info.";
+      const lowerText = text.toLowerCase();
+      
+      for (const item of knowledgeBase) {
+        if (item.keys.some(key => lowerText.includes(key))) {
+          response = item.answer;
+          break;
+        }
+      }
+      setTimeout(() => addMessage(response, 'bot'), 500);
+    }
+
+    userInput.addEventListener("keypress", (e) => { if (e.key === "Enter") handleSend(); });
+  </script>
 </body>
 </html>
